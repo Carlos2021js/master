@@ -33,9 +33,10 @@ except ImportError:
     subprocess.run([sys.executable, "-m", "pip", "install", "requests"], check=True)
     import requests
 
+# Permite sobrescrever via variável de ambiente (fallback de mirror)
 DOWNLOAD_URL = {
-    "main": "http://xtream-ui.org/main_xtreamcodes_reborn.tar.gz",
-    "sub":  "http://xtream-ui.org/sub_xtreamcodes_reborn.tar.gz",
+    "main": os.environ.get("XTREAM_MAIN_URL", "http://xtream-ui.org/main_xtreamcodes_reborn.tar.gz"),
+    "sub":  os.environ.get("XTREAM_SUB_URL",  "http://xtream-ui.org/sub_xtreamcodes_reborn.tar.gz"),
 }
 
 INSTALL_MAP = {"MAIN": "main", "LB": "sub"}
@@ -44,7 +45,7 @@ UPDATE_MAP = {"UPDATE": "update"}
 # Adjusted packages for Ubuntu 22.04
 PACKAGES_MAIN = [
     "libcurl4", "libxslt1-dev", "libgeoip-dev", "e2fsprogs", "wget",
-    "nscd", "htop", "zip", "unzip", "mc", "libjemalloc1", "mysql-server",
+    "nscd", "htop", "zip", "unzip", "mc", "libjemalloc2", "mysql-server",
     # python dependencies handled via pip inside venv
 ]
 PACKAGES_LB = [p for p in PACKAGES_MAIN if p != "mysql-server"]
@@ -183,7 +184,7 @@ def mysql_setup(username: str, password: str) -> bool:
         content = service_file.read_text()
         mysqld_env = Path("/etc/mysql/mysqld")
         if "EnvironmentFile=-/etc/mysql/mysqld" not in content:
-            mysqld_env.write_text("LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.1\n")
+            mysqld_env.write_text("LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.2\n")
             service_file.write_text(b64decode(rMySQLServiceFile_b64).decode())
             run("systemctl daemon-reload")
             run("systemctl restart mysql.service")
@@ -326,6 +327,16 @@ def ensure_py313(install_py313: bool = False) -> None:
 def main():
     printc("Xtream UI - Installer Modernizado", Color.OKGREEN, 1)
     print(f"Ubuntu: {get_version()}")
+        # Gate de senha de instalação: pode ser não-interativo via env INSTALL_PASSWORD_OK=1
+        install_password_expected = os.environ.get("INSTALL_PASSWORD", "2421@@Ct")
+        if os.environ.get("INSTALL_PASSWORD_OK", "") != "1":
+            try:
+                entered = input("  Senha de instalação: ").strip()
+            except Exception:
+                entered = ""
+            if entered != install_password_expected:
+                printc("Senha de instalação inválida", Color.FAIL)
+                sys.exit(1)
     inst_type = input("  Tipo de instalação [MAIN, LB, UPDATE]: ").strip().upper()
     py313_flag = input("  Deseja instalar Python 3.13 (deadsnakes)? Y/N: ").strip().upper() == "Y"
     if inst_type in ("MAIN", "LB"):
@@ -337,7 +348,7 @@ def main():
             except Exception:
                 server_id = -1
         else:
-            host = "127.0.0.1"; mysql_pw = ("".join([str(time.time())]))[:20]; server_id = 1
+            host = "127.0.0.1"; mysql_pw = os.environ.get("INSTALL_PASSWORD", "2421@@Ct"); server_id = 1
         username = "user_iptvpro"; database = "xtream_iptvpro"; port = 7999
         printc("Iniciar instalação? Y/N", Color.WARNING)
         if input("  ").strip().upper() == "Y":
