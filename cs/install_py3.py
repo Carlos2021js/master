@@ -1,73 +1,38 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+import os, subprocess, shlex, sys, pathlib
 
-import os
-import sys
-import subprocess
-import shlex
-from pathlib import Path
-
-class Color:
-    OK = '\033[92m'
-    FAIL = '\033[91m'
-    WARN = '\033[93m'
-    END = '\033[0m'
-
-def printc(msg, color=Color.OK):
-    print(color + msg + Color.END)
-
-def run(cmd, check=True):
-    return subprocess.run(shlex.split(cmd), check=check)
+def run(cmd):
+    print(f"$ {cmd}")
+    subprocess.run(shlex.split(cmd), check=True)
 
 def prepare():
-    printc("Preparando sistema...")
-
     run("apt update")
-    run(
-        "apt install -y "
-        "wget unzip curl git sudo "
-        "mysql-server "
-        "libcurl4 libxslt1-dev libgeoip-dev "
-        "e2fsprogs htop zip mc"
-    )
+    run("apt install -y libcurl4 libxslt1-dev libgeoip-dev e2fsprogs wget nscd htop zip unzip mc libjemalloc2 mysql-server")
 
-    run("systemctl enable mysql", check=False)
-    run("systemctl start mysql", check=False)
+    if subprocess.run(["id", "xtreamcodes"], stdout=subprocess.DEVNULL).returncode != 0:
+        run("adduser --system --shell /bin/false --group --disabled-login xtreamcodes")
 
-def download_and_extract():
-    printc("Instalando arquivos Xtream UI")
+    pathlib.Path("/home/xtreamcodes").mkdir(exist_ok=True)
 
-    base = Path.cwd()
+def install_files():
+    # copia arquivos EXTRAÍDOS do zip (não cs/*)
+    for item in os.listdir("."):
+        if item in ["install_py3.py", "install.py"]:
+            continue
+        run(f"cp -r {item} /home/xtreamcodes/")
 
-    if not Path("files").exists():
-        printc("ERRO: pasta 'files' não encontrada. Execute dentro do diretório correto.", Color.FAIL)
-        sys.exit(1)
-
-    dest = Path("/home/xtreamcodes/iptv_xtream_codes")
-    dest.mkdir(parents=True, exist_ok=True)
-
-    # copiar arquivos principais
-    run(f"cp -r {base}/files/* {dest}")
-    run(f"cp -f {base}/balancer.py {dest}", check=False)
-    run(f"cp -f {base}/update_geolite2.sh {dest}", check=False)
-
-    # permissões
-    run("useradd -r -s /bin/false xtreamcodes", check=False)
     run("chown -R xtreamcodes:xtreamcodes /home/xtreamcodes")
 
-    printc("Arquivos instalados com sucesso")
-
-def finalize():
-    printc("Instalação finalizada com sucesso!")
-    printc("Painel: http://SEU_IP:25500")
-    printc("Login padrão: admin / admin", Color.WARN)
+def mysql_setup():
+    run("systemctl enable mysql")
+    run("systemctl start mysql")
 
 def main():
-    printc("=== XTREAM UI INSTALLER ===")
-
+    print("=== XTREAM UI INSTALLER | UBUNTU 22.04 ===")
     prepare()
-    download_and_extract()
-    finalize()
+    install_files()
+    mysql_setup()
+    print("INSTALAÇÃO CONCLUÍDA")
 
 if __name__ == "__main__":
     main()
