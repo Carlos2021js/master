@@ -327,16 +327,7 @@ def ensure_py313(install_py313: bool = False) -> None:
 def main():
     printc("Xtream UI - Installer Modernizado", Color.OKGREEN, 1)
     print(f"Ubuntu: {get_version()}")
-        # Gate de senha de instalação: pode ser não-interativo via env INSTALL_PASSWORD_OK=1
-        install_password_expected = os.environ.get("INSTALL_PASSWORD", "2421@@Ct")
-        if os.environ.get("INSTALL_PASSWORD_OK", "") != "1":
-            try:
-                entered = input("  Senha de instalação: ").strip()
-            except Exception:
-                entered = ""
-            if entered != install_password_expected:
-                printc("Senha de instalação inválida", Color.FAIL)
-                sys.exit(1)
+
     inst_type = input("  Tipo de instalação [MAIN, LB, UPDATE]: ").strip().upper()
     py313_flag = input("  Deseja instalar Python 3.13 (deadsnakes)? Y/N: ").strip().upper() == "Y"
     if inst_type in ("MAIN", "LB"):
@@ -348,7 +339,7 @@ def main():
             except Exception:
                 server_id = -1
         else:
-            host = "127.0.0.1"; mysql_pw = os.environ.get("INSTALL_PASSWORD", "2421@@Ct"); server_id = 1
+            host = "127.0.0.1"; mysql_pw = ("".join([str(time.time())]))[:20]; server_id = 1
         username = "user_iptvpro"; database = "xtream_iptvpro"; port = 7999
         printc("Iniciar instalação? Y/N", Color.WARNING)
         if input("  ").strip().upper() == "Y":
