@@ -1,0 +1,13 @@
+{
+  "premium_enabled": true,
+  "features": {
+    "player_hybrid": true,
+    "font_tester": true,
+    "performance_tuning": true,
+    "advanced_reporting": true,
+    "priority_support": true
+  },
+  "permissions": {
+    "admin": ["*"]
+  }
+}
