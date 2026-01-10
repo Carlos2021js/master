@@ -1,7 +1,0 @@
-{
-  "enabled": false,
-  "url": "",
-  "interval_minutes": 30,
-  "remove_missing": false,
-  "auto_organize": true
-}
