@@ -1,12 +1,12 @@
 {
   "product": "CS Player",
   "channel": "stable",
-  "version": "2.0.9",
-  "build": 209,
+  "version": "3.0.0",
+  "build": 300,
   "published_at": "2026-08-21T09:35:00-03:00",
 
   "download": {
-    "url": "https://raw.githubusercontent.com/Carlos2021js/master/main/csplayerv.2.0.9.zip",
+    "url": "https://raw.githubusercontent.com/Carlos2021js/master/main/csplayerv.3.0.0.zip",
     "sha256": "",
     "size": 0
   },
