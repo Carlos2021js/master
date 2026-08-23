@@ -7,7 +7,7 @@
   "download": {
     "url": "https://raw.githubusercontent.com/Carlos2021js/master/main/csplayerv.5.0.5.zip",
     "sha256": "06b7d1c76b16bd2a5e2c62b6f31bf4782a1b627c41ec48fece50bf477ec71ec5",
-    "size": 16276747
+    "size": 16282703
   },
   "requirements": {
     "php_min": "7.4.0",
@@ -21,8 +21,12 @@
     "backup_before_update": true
   },
   "changelog": [
-    "Correções gerais do CS Player",
-    "Melhorias no Web Player",
-    "Correções de estabilidade"
+    "Melhoria inteligente dos três importadores M3U",
+    "Importação sequencial: canais, filmes e séries",
+    "Barras individuais de progresso por tipo de conteúdo",
+    "Execução e acompanhamento em segundo plano",
+    "Reconexão automática em falhas temporárias",
+    "Compatibilidade preservada com o banco de dados",
+    "Nenhuma alteração de tabelas ou colunas"
   ]
 }
