@@ -1,0 +1,32 @@
+{
+  "product": "CS Player",
+  "channel": "stable",
+  "version": "5.0.3",
+  "build": 503,
+  "published_at": "2026-08-21T09:35:00-03:00",
+
+  "download": {
+    "url": "https://raw.githubusercontent.com/Carlos2021js/master/main/csplayerv.5.0.3.zip",
+    "sha256": "",
+    "size": 0
+  },
+
+  "requirements": {
+    "php_min": "7.4.0",
+    "php_max": "8.4.99"
+  },
+
+  "update": {
+    "required": false,
+    "database_changes": false,
+    "preserve_config": true,
+    "preserve_database": true,
+    "backup_before_update": true
+  },
+
+  "changelog": [
+    "Correções gerais do CS Player"
+    "Melhorias no Web Player",
+    "Correções de estabilidade",
+  ]
+}
