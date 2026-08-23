@@ -1,13 +1,13 @@
 {
   "product": "CS Player",
   "channel": "stable",
-  "version": "5.0.5",
-  "build": 505,
-  "published_at": "2026-08-21T09:35:00-03:00",
+  "version": "5.0.6",
+  "build": 506,
+  "published_at": "2026-08-23T20:03:00-03:00",
   "download": {
-    "url": "https://raw.githubusercontent.com/Carlos2021js/master/main/csplayerv.5.0.5.zip",
-    "sha256": "06b7d1c76b16bd2a5e2c62b6f31bf4782a1b627c41ec48fece50bf477ec71ec5",
-    "size": 16282703
+    "url": "https://raw.githubusercontent.com/Carlos2021js/master/main/csplayerv.5.0.6.zip",
+    "sha256": "bd92583142b5fe586092ee548856ad0a18f7238207407a03534fca21331cc74f",
+    "size": 16285353
   },
   "requirements": {
     "php_min": "7.4.0",
@@ -21,12 +21,12 @@
     "backup_before_update": true
   },
   "changelog": [
-    "Melhoria inteligente dos três importadores M3U",
-    "Importação sequencial: canais, filmes e séries",
-    "Barras individuais de progresso por tipo de conteúdo",
-    "Execução e acompanhamento em segundo plano",
-    "Reconexão automática em falhas temporárias",
-    "Compatibilidade preservada com o banco de dados",
-    "Nenhuma alteração de tabelas ou colunas"
+    "Correção completa da cópia de arquivos do atualizador",
+    "Cópia atômica arquivo por arquivo com diagnóstico do caminho que falhou",
+    "Pré-verificação de permissões antes de alterar qualquer arquivo",
+    "Rollback aprimorado incluindo remoção segura de arquivos recém-criados",
+    "Logs detalhados de falha e restauração",
+    "Área temporária exclusiva sem percorrer diretórios privados do sistema",
+    "Preservação de configurações e banco de dados"
   ]
 }
