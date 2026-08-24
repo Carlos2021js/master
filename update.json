@@ -1,0 +1,32 @@
+{
+  "product": "CS Player",
+  "channel": "stable",
+  "version": "5.0.9",
+  "build": 509,
+  "published_at": "2026-08-23T21:42:00-03:00",
+  "download": {
+    "url": "https://raw.githubusercontent.com/Carlos2021js/master/main/csplayerv.5.0.9.zip",
+"sha256": "3b334008727e44711e490193a94abb1d5f1de88a1f30c1ce8b001afc06ad9274"
+    "size": 16288062
+  },
+  "requirements": {
+    "php_min": "7.4.0",
+    "php_max": "8.4.99"
+  },
+  "update": {
+    "required": false,
+    "database_changes": false,
+    "preserve_config": true,
+    "preserve_database": true,
+    "backup_before_update": true
+  },
+  "changelog": [
+    "Correção completa de autenticação dos DNS manuais",
+    "Compatibilidade XC, Smart e M3U por IP ou domínio",
+    "Fallback HTTP e porta 80 para servidores IPTV",
+    "Correção de falso positivo HLS 200/404",
+    "Fallback MP4 sem Range quando a origem rejeita Range",
+    "Uso da URL efetiva após redirecionamentos",
+    "Nenhuma alteração no banco de dados"
+  ]
+}
