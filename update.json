@@ -1,0 +1,32 @@
+{
+  "product": "CS Player",
+  "channel": "stable",
+  "version": "5.0.9",
+  "build": 509,
+  "published_at": "2026-08-23T20:03:00-03:00",
+  "download": {
+    "url": "https://raw.githubusercontent.com/Carlos2021js/master/main/csplayerv.5.0.6.zip",
+    "sha256": "3b334008727e44711e490193a94abb1d5f1de88a1f30c1ce8b001afc06ad9274",
+    "size": 16285353
+  },
+  "requirements": {
+    "php_min": "7.4.0",
+    "php_max": "8.4.99"
+  },
+  "update": {
+    "required": false,
+    "database_changes": false,
+    "preserve_config": true,
+    "preserve_database": true,
+    "backup_before_update": true
+  },
+  "changelog": [
+    "Correção completa da cópia de arquivos do atualizador",
+    "Cópia atômica arquivo por arquivo com diagnóstico do caminho que falhou",
+    "Pré-verificação de permissões antes de alterar qualquer arquivo",
+    "Rollback aprimorado incluindo remoção segura de arquivos recém-criados",
+    "Logs detalhados de falha e restauração",
+    "Área temporária exclusiva sem percorrer diretórios privados do sistema",
+    "Preservação de configurações e banco de dados"
+  ]
+}
