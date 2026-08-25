@@ -1,11 +1,11 @@
 {
   "product": "CS Player",
   "channel": "stable",
-  "version": "5.1.1",
-  "build": 511,
+  "version": "5.1.2",
+  "build": 512,
   "published_at": "2026-08-23T20:03:00-03:00",
   "download": {
-    "url": "https://raw.githubusercontent.com/Carlos2021js/master/main/csplayerv.5.1.1.zip",
+    "url": "https://raw.githubusercontent.com/Carlos2021js/master/main/csplayerv.5.1.2.zip",
     "sha256": "c39e2a05627d0bfe8cbccdc2380acb8eebf0426abcc3c19c7439e02f3f9edc45",
     "size": 23288382
   },
