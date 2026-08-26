@@ -4,10 +4,10 @@
   "version": "5.1.9",
   "build": 519,
   "published_at": "2026-08-23T20:03:00-03:00",
-  "download": {
-    "url": "https://raw.githubusercontent.com/Carlos2021js/master/main/csplayerv.5.1.9.zip",
-    "sha256": "23cf9a967b22318723fc8ea829c4ea9f2ffde4f04f478673b5a4c90215541e46",
-    "size": 16678374
+"download": {
+  "url": "https://raw.githubusercontent.com/Carlos2021js/master/main/csplayerv.5.1.9.zip",
+  "sha256": "23cf9a967b22318723fc8ea829c4ea9f2ffde4f04f478673b5a4c90215541e46",
+  "size": 16678374
   },
   "requirements": {
     "php_min": "7.4.0",
