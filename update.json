@@ -1,13 +1,13 @@
 {
   "product": "CS Player",
   "channel": "stable",
-  "version": "5.2.0",
-  "build": 520,
+  "version": "5.2.1",
+  "build": 521,
   "published_at": "2026-08-23T20:03:00-03:00",
 "download": {
   "url": "https://www.dropbox.com/scl/fi/ghrzwykfkl9osh1kd1f94/csplayerv.5.2.0.zip?rlkey=tosau85a3l1av14x0k6wrsyp2&st=e29g66zq&dl=1",
-  "sha256": "904f673e3fadf86eb8e761e2e656a13284e0dbbff4a6e7c6eb0c3d8eb1564366",
-  "size": 616668894
+  "sha256": "bb59548a71669f02e5f5ebac228232b0c4a212d2725fec433e37431e47e899cc",
+  "size": 616672256
   },
   "requirements": {
     "php_min": "7.4.0",
