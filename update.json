@@ -1,12 +1,12 @@
 {
   "product": "CS Player",
   "channel": "stable",
-  "version": "5.2.3",
-  "build": 523,
+  "version": "5.2.4",
+  "build": 524,
   "published_at": "2026-08-23T20:03:00-03:00",
 "download": {
-  "url": "https://www.dropbox.com/scl/fi/87v4mm3pty0ag2d40b001/csplayerv.0.1.zip?rlkey=ln0046sz3g28esjsu93ksdu2h&st=9mis9i5l&dl=1",
-  "sha256": "7caccc92cb793d48e5323ccc860a24145961a9487d7d4d44e42e6fb0ee74fd3d",
+  "url": "https://www.dropbox.com/scl/fi/77ojnr94e9pb0rmfpm45c/csplayerv-0.1.zip?rlkey=8sfdg5fa5y8fsevtx9nzee32o&st=y86casqv&dl=1",
+  "sha256": "9ecc0ef9e7b898fcadd34ec4cf3270071d7d451d90d798e7dd2d766ae991692c",
   "size": 616702180
   },
   "requirements": {
