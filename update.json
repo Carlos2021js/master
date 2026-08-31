@@ -5,9 +5,9 @@
   "build": 324,
   "published_at": "2026-08-23T20:03:00-03:00",
 "download": {
-  "url": "https://raw.githubusercontent.com/Carlos2021js/master/main/csplayerv2.1.zip",
-  "sha256": "0a32e008ab364c995863ee68cac5516a4277601e4dfbc802582c2cfd9137fd3f",
-  "size": 16179868
+  "url": "https://raw.githubusercontent.com/Carlos2021js/master/main/csplayerv.7.2.1.zip",
+  "sha256": "f5aa7f6a5bee53bc75088b5de38ec0885937bbbe10f8d0d7c699e80ff612b6c8",
+  "size": 23979035
   },
   "requirements": {
     "php_min": "7.4.0",
