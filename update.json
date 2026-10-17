@@ -5,9 +5,7 @@
   "build": 821,
   "published_at": "2026-08-23T20:03:00-03:00",
 "download": {
-  "url": "https://files.catbox.moe/qfz14h.zip",
-  "sha256": "f5aa7f6a5bee53bc75088b5de38ec0885937bbbe10f8d0d7c699e80ff612b6c8",
-  "size": 23979035
+  "url": "https://files.catbox.moe/xrkdtx.zip",
   },
   "requirements": {
     "php_min": "7.4.0",
