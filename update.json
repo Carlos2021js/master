@@ -1,0 +1,27 @@
+{
+  "product": "CS PLAYER",
+  "version": "3.0.4",
+  "build": 304,
+  "channel": "stable",
+  "published_at": "2026-10-17T23:06:10Z",
+  "changelog": [
+    "Padronização dos headers e menus horizontal/lateral.",
+    "Menu mobile e menu de perfil responsivos, com rolagem interna.",
+    "Atalhos funcionais para Administração do WebPlayer e Área VIP.",
+    "Corretor de banco de dados disponível no menu de ferramentas.",
+    "Backup integrado ao painel de Atualizações do CS PLAYER.",
+    "Atualização protegida por validação do pacote e rollback automático."
+  ],
+  "update": {
+    "required": false,
+    "database_changes": false,
+    "backup": true,
+    "rollback": true,
+    "preserve_database": true
+  },
+  "download": {
+    "url": "https://files.catbox.moe/61pmtb.zip",
+    "sha256": "a963e39c3d4cf20abc094c6fd4fcc5c68d180f0da2e9bf2746c59d68f419cd2f",
+    "size": 26592911
+  }
+}
